@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Using constructor injection -->
+    <bean id="ethiotel" class="com.itsc.ioc.EthioTel">
+        <constructor-arg value="EthioTel Mobile Network"/>
+        <constructor-arg value="0911121314"/>
+    </bean>
+
+    <!-- Using property injection -->
+    <bean id="safari" class="com.itsc.ioc.Safaricom">
+        <property name="operatorName" value="Safaricom Mobile Network"/>
+        <property name="phoneNumber" value="0902232425"/>
+    </bean>
+
+    <!-- Default bean that can be switched in config -->
+    <bean id="sim" class="com.itsc.ioc.EthioTel">
+        <property name="operatorName" value="Default EthioTel"/>
+        <property name="phoneNumber" value="0933343536"/>
+    </bean>
+</beans>
